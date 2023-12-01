@@ -10,11 +10,6 @@ import java.util.List;
 
 public class ProblemOne
 {
-	public static int ProblemOne()
-	{
-		return Sum();
-	}
-
 	public static int Sum()
 	{
 		int total = 0;
@@ -30,13 +25,13 @@ public class ProblemOne
 
 	private static ArrayList<Integer> GetNumbers() throws IOException {
 		ArrayList<Integer> numbers = new ArrayList<>();
-		List<String> fileLines = Files.readAllLines(Paths.get("C:\\Users\\User\\Downloads\\advent of code.txt"));
+		List<String> fileLines = Files.readAllLines(Paths.get("src/data/dayOne/input.txt"));
 
 		for (String line : fileLines)
 		{
 			String numbersStr = CharMatcher.inRange('0', '9').retainFrom(line);
 			char[] chars = numbersStr.toCharArray();
-			String numStr = "0";
+			String numStr;
 			if (chars.length == 1)
 			{
 				numStr = String.valueOf(chars[0]) + String.valueOf(chars[0]);

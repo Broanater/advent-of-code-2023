@@ -2,6 +2,6 @@ package DayOne;
 
 public class DayOneController
 {
-	public int One() { return ProblemOne.Sum(); }
-	public int Two() { return ProblemTwo.Sum(); }
+	public static int One() { return ProblemOne.Sum(); }
+	public static int Two() { return ProblemTwo.Sum(); }
 }

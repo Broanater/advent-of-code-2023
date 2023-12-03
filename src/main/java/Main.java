@@ -1,13 +1,23 @@
 import DayOne.DayOneController;
+import DayThree.DayThreeController;
 import DayTwo.DayTwoController;
+
+import java.io.IOException;
 
 public class Main
 {
-	public static void main(String[] args) {
-		//System.out.println("D1P1: " + DayOneController.One());
-		//System.out.println("D1P2: " + DayOneController.Two());
+	public static void main(String[] args) throws IOException
+	{
+		// Day One
+		//System.out.println(DayOneController.One());
+		//System.out.println(DayOneController.Two());
 
-		//System.out.println("D2P1: " + DayTwoController.PartOne());
-		System.out.println("D2P1: " + DayTwoController.PartTwo());
+		// Day Two
+		//System.out.println(DayTwoController.PartOne());
+		//System.out.println(DayTwoController.PartTwo());
+
+		// Day Three
+		//System.out.println(DayThreeController.PartOne());
+		System.out.println(DayThreeController.PartTwo());
 	}
 }

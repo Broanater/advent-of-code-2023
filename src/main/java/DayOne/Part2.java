@@ -6,18 +6,19 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProblemTwo
+public class Part2
 {
-	public static int Sum ()
+	public static void main (String[] args) throws IOException
+	{
+		System.out.println(Sum());
+	}
+
+	public static int Sum () throws IOException
 	{
 		int total = 0;
-		try {
-			for (int num : GetNumbers()) {
-				total += num;
-			}
-		}
-		catch (Exception e) {
-			e.printStackTrace();
+		for (int num : GetNumbers())
+		{
+			total += num;
 		}
 		return total;
 	}
@@ -107,7 +108,7 @@ public class ProblemTwo
 				if (newLine.startsWith("nine")) { lastNum = 9; }
 			}
 
-			String numStr = String.valueOf(firstNum) + String.valueOf(lastNum);
+			String numStr = firstNum + String.valueOf(lastNum);
 			numbers.add(Integer.parseInt(numStr));
 		}
 

@@ -7,6 +7,11 @@ import java.util.List;
 
 public class Part1
 {
+	public static void main (String[] args) throws IOException
+	{
+		System.out.println(Sum());
+	}
+
 	public static int Sum () throws IOException
 	{
 		List<String> fileLines = Files.readAllLines(Paths.get("src/data/dayThree/input.txt"));
@@ -29,7 +34,6 @@ public class Part1
 					}
 					int rightIndex = column - 1;
 
-					boolean isPartNumber = false;
 					for (int checkIndexColumn = leftIndex - 1 ; checkIndexColumn < rightIndex + 2 ; checkIndexColumn++)
 					{
 						for (int checkIndexRow = row - 1 ; checkIndexRow < row + 2 ; checkIndexRow++)

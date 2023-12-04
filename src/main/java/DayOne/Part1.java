@@ -8,17 +8,19 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProblemOne
+public class Part1
 {
-	public static int Sum()
+	public static void main (String[] args) throws IOException
+	{
+		System.out.println(Sum());
+	}
+
+	public static int Sum () throws IOException
 	{
 		int total = 0;
-		try {
-			for (int num : GetNumbers()) {
-				total+=num;
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
+		for (int num : GetNumbers())
+		{
+			total += num;
 		}
 		return total;
 	}
@@ -34,11 +36,11 @@ public class ProblemOne
 			String numStr;
 			if (chars.length == 1)
 			{
-				numStr = String.valueOf(chars[0]) + String.valueOf(chars[0]);
+				numStr = chars[0] + String.valueOf(chars[0]);
 			}
 			else
 			{
-				numStr = String.valueOf(chars[0]) + String.valueOf(chars[chars.length - 1]);
+				numStr = chars[0] + String.valueOf(chars[chars.length - 1]);
 			}
 
 

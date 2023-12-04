@@ -8,20 +8,22 @@ import java.util.List;
 
 public class Part1
 {
-	public static int Sum()
+	public static void main (String[] args) throws IOException
+	{
+		System.out.println(Sum());
+	}
+
+	public static int Sum () throws IOException
 	{
 		int total = 0;
-		try {
-			for (int num : GetNumbers()) {
-				total+=num;
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
+		for (int num : GetNumbers())
+		{
+			total += num;
 		}
 		return total;
 	}
 
-	private static ArrayList<Integer> GetNumbers() throws IOException
+	private static ArrayList<Integer> GetNumbers () throws IOException
 	{
 		ArrayList<Integer> ids = new ArrayList<>();
 		List<String> fileLines = Files.readAllLines(Paths.get("src/data/dayTwo/input.txt"));
@@ -55,7 +57,12 @@ public class Part1
 							break;
 					}
 				}
-				if (redAllowed && greenAllowed && blueAllowed) { gameAllowed = true; } else { gameAllowed = false; break; }
+				if (redAllowed && greenAllowed && blueAllowed) { gameAllowed = true; }
+				else
+				{
+					gameAllowed = false;
+					break;
+				}
 			}
 			if (gameAllowed) { ids.add(gameId); }
 		}

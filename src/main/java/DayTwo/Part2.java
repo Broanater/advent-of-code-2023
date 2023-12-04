@@ -8,15 +8,17 @@ import java.util.List;
 
 public class Part2
 {
-	public static int Sum()
+	public static void main (String[] args) throws IOException
+	{
+		System.out.println(Sum());
+	}
+
+	public static int Sum () throws IOException
 	{
 		int total = 0;
-		try {
-			for (int num : GetNumbers()) {
-				total+=num;
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
+		for (int num : GetNumbers())
+		{
+			total += num;
 		}
 		return total;
 	}

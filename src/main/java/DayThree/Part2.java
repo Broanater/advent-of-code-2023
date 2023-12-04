@@ -8,17 +8,15 @@ import java.util.List;
 
 public class Part2
 {
-	public static int Sum ()
+	public static void main (String[] args) throws IOException
 	{
-		List<String> fileLines = null;
-		try
-		{
-			fileLines = Files.readAllLines(Paths.get("src/data/dayThree/input.txt"));
-		}
-		catch (IOException e)
-		{
-			throw new RuntimeException(e);
-		}
+		System.out.println(Sum());
+	}
+
+	public static int Sum () throws IOException
+	{
+		List<String> fileLines = Files.readAllLines(Paths.get("src/data/dayThree/input.txt"));
+
 		int rows = fileLines.size();
 		int columns = fileLines.get(0).length();
 

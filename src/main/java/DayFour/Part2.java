@@ -8,6 +8,11 @@ import java.util.List;
 
 public class Part2
 {
+	public static void main (String[] args) throws IOException
+	{
+		System.out.println(Sum());
+	}
+
 	public static int Sum () throws IOException
 	{
 		List<String> input = Files.readAllLines(Paths.get("src/data/dayFour/input.txt"));

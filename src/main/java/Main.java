@@ -1,6 +1,5 @@
-import DayOne.DayOneController;
-import DayThree.DayThreeController;
-import DayTwo.DayTwoController;
+import DayFour.Day4Controller;
+import DayThree.Day3Controller;
 
 import java.io.IOException;
 
@@ -18,6 +17,10 @@ public class Main
 
 		// Day Three
 		//System.out.println(DayThreeController.PartOne());
-		System.out.println(DayThreeController.PartTwo());
+		//System.out.println(Day3Controller.PartTwo());
+
+		// Day Four
+		//System.out.println(Day4Controller.Part1());
+		System.out.println(Day4Controller.Part2());
 	}
 }

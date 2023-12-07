@@ -9,9 +9,7 @@ public class Part2
 {
 	public static void main(String[] args) throws IOException
 	{
-		int winnings = Winnings();
-		System.out.println(winnings);
-		System.out.println(winnings == 245794069);
+		System.out.println(Winnings());
 	}
 
 	public static int Winnings() throws IOException
@@ -33,7 +31,7 @@ public class Part2
 			}
 
 			int handStrength = DetermineStrength(counts);
-			for (int i = 0 ; i < counts[cards.indexOf('J')] ; i ++)
+			for (int i = 0 ; i < counts[cards.indexOf('J')] ; i++)
 			{
 				handStrength = ApplyWildcard(handStrength);
 			}
@@ -91,14 +89,14 @@ public class Part2
 	{
 		int pairs = 0;
 		int sets = 0;
-		for (int match : counts)
+		for (int i = 1 ; i < counts.length ; i++)
 		{
 			// 5 of a kind
-			if (match == 5) return 6;
+			if (counts[i] == 5) return 6;
 			// 4 of a kind
-			if (match == 4) return 5;
-			if (match == 3) sets++;
-			if (match == 2) pairs++;
+			if (counts[i] == 4) return 5;
+			if (counts[i] == 3) sets++;
+			if (counts[i] == 2) pairs++;
 		}
 
 		// Full house

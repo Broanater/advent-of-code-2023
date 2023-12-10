@@ -1,4 +1,4 @@
-package DayEight;
+package Day8;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,7 +15,7 @@ public class Part1
 
 	public static int Moves() throws IOException
 	{
-		List<String> input = Files.readAllLines(Paths.get("src/data/dayEight/input.txt"));
+		List<String> input = Files.readAllLines(Paths.get("src/data/day8/input.txt"));
 
 		String instructions = input.get(0);
 
@@ -36,7 +36,7 @@ public class Part1
 		int moves = 0;
 		boolean reachedEnd = false;
 		int i = 0;
-		while(!reachedEnd)
+		while (!reachedEnd)
 		{
 			if (i >= instructions.length()) i = 0;
 			moves++;
@@ -60,7 +60,7 @@ public class Part1
 		String left;
 		String right;
 
-		public Map(String key,String left, String right)
+		public Map(String key, String left, String right)
 		{
 			this.key = key;
 			this.left = left;

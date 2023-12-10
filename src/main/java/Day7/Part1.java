@@ -1,9 +1,10 @@
-package DaySeven;
+package Day7;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Part1
 {
@@ -15,7 +16,7 @@ public class Part1
 	public static int Winnings() throws IOException
 	{
 		int winnings = 0;
-		List<String> input = Files.readAllLines(Paths.get("src/data/daySeven/input.txt"));
+		List<String> input = Files.readAllLines(Paths.get("src/data/day7/input.txt"));
 		String cards = "23456789TJQKA";
 
 		List<Hand> hands = new ArrayList<>();
@@ -69,6 +70,7 @@ public class Part1
 			5 : 4 of a kind
 			6 : 5 of a kind
 		 */
+
 		int strength;
 		String cards;
 		int bid;

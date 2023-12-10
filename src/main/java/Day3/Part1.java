@@ -1,4 +1,4 @@
-package DayThree;
+package Day3;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,14 +7,14 @@ import java.util.List;
 
 public class Part1
 {
-	public static void main (String[] args) throws IOException
+	public static void main(String[] args) throws IOException
 	{
 		System.out.println(Sum());
 	}
 
-	public static int Sum () throws IOException
+	public static int Sum() throws IOException
 	{
-		List<String> fileLines = Files.readAllLines(Paths.get("src/data/dayThree/input.txt"));
+		List<String> fileLines = Files.readAllLines(Paths.get("src/data/day3/input.txt"));
 
 		int rows = fileLines.size();
 		int columns = fileLines.get(0).length();
@@ -39,9 +39,7 @@ public class Part1
 						for (int checkIndexRow = row - 1 ; checkIndexRow < row + 2 ; checkIndexRow++)
 						{
 							if (inIndexRange(checkIndexRow, checkIndexColumn, rows, columns) && isSymbol(fileLines.get(checkIndexRow).charAt(checkIndexColumn)))
-							{
 								answer += num;
-							}
 						}
 					}
 				}
@@ -51,9 +49,9 @@ public class Part1
 		return answer;
 	}
 
-	private static boolean isSymbol (Character checkChar)
+	private static boolean isSymbol(Character checkChar)
 	{
-		return ! (Character.isDigit(checkChar) || checkChar == '.');
+		return !(Character.isDigit(checkChar) || checkChar == '.');
 	}
 
 	private static boolean inIndexRange(int row, int column, int rows, int columns)

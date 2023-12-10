@@ -1,4 +1,4 @@
-package DayEight;
+package Day8;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,7 +16,7 @@ public class Part2
 
 	public static long Moves() throws IOException
 	{
-		List<String> input = Files.readAllLines(Paths.get("src/data/dayEight/input.txt"));
+		List<String> input = Files.readAllLines(Paths.get("src/data/day8/input.txt"));
 
 		String instructions = input.get(0);
 

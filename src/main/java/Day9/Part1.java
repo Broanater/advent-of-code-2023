@@ -1,4 +1,4 @@
-package DayNine;
+package Day9;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,13 +10,13 @@ import java.util.regex.Pattern;
 
 public class Part1
 {
-	public static void main (String[] args) throws IOException
+	public static void main(String[] args) throws IOException
 	{
-		List<String> input = Files.readAllLines(Paths.get("src/data/dayNine/input.txt"));
+		List<String> input = Files.readAllLines(Paths.get("src/data/day9/input.txt"));
 		System.out.println(GetSequences(input).stream().mapToInt(Part1 :: GetNextNumber).sum());
 	}
 
-	private static List<List<Integer>> GetSequences (List<String> input)
+	private static List<List<Integer>> GetSequences(List<String> input)
 	{
 		List<List<Integer>> sequences = new ArrayList<>();
 		Pattern nrPattern = Pattern.compile("-?\\d+");
@@ -34,7 +34,7 @@ public class Part1
 		return sequences;
 	}
 
-	private static List<Integer> GetDifferences (List<Integer> sequence)
+	private static List<Integer> GetDifferences(List<Integer> sequence)
 	{
 		List<Integer> differences = new ArrayList<>();
 		for (int i = 0 ; i < sequence.size() - 1 ; i++)
@@ -44,16 +44,11 @@ public class Part1
 		return differences;
 	}
 
-	private static int GetNextNumber (List<Integer> sequence)
+	private static int GetNextNumber(List<Integer> sequence)
 	{
 		List<Integer> differences = GetDifferences(sequence);
 		if (differences.stream().anyMatch(x -> x != 0))
-		{
 			return sequence.get(sequence.size() - 1) + GetNextNumber(differences);
-		}
-		else
-		{
-			return sequence.get(sequence.size() - 1);
-		}
+		else return sequence.get(sequence.size() - 1);
 	}
 }

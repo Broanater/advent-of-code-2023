@@ -1,4 +1,4 @@
-package DayFour;
+package Day4;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,14 +8,14 @@ import java.util.List;
 
 public class Part2
 {
-	public static void main (String[] args) throws IOException
+	public static void main(String[] args) throws IOException
 	{
 		System.out.println(Sum());
 	}
 
-	public static int Sum () throws IOException
+	public static int Sum() throws IOException
 	{
-		List<String> input = Files.readAllLines(Paths.get("src/data/dayFour/input.txt"));
+		List<String> input = Files.readAllLines(Paths.get("src/data/day4/input.txt"));
 		HashMap<Integer, Integer> cardCopies = new HashMap<>();
 
 		for (int cardNum = 0 ; cardNum < input.size() ; cardNum++)
@@ -35,11 +35,11 @@ public class Part2
 			String[] yourNumbers = yourCards.split(" ");
 			for (String numStr : yourNumbers)
 			{
-				if (numStr.isEmpty()) { continue; }
+				if (numStr.isEmpty()) continue;
 				int num = Integer.parseInt(numStr.trim());
 				for (String winningNumStr : winningNumbers)
 				{
-					if (winningNumStr.isEmpty()) { continue; }
+					if (winningNumStr.isEmpty()) continue;
 					int winningNum = Integer.parseInt(winningNumStr.trim());
 					if (num == winningNum)
 					{

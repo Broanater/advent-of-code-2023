@@ -1,4 +1,4 @@
-package DayFive;
+package Day5;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -17,7 +17,7 @@ public class Part2
 
 	public static double Seeds() throws IOException
 	{
-		List<String> input = Files.readAllLines(Paths.get("src/data/dayFive/input.txt"));
+		List<String> input = Files.readAllLines(Paths.get("src/data/day5/input.txt"));
 		double lowestLocation = Double.MAX_VALUE;
 
 		List<Range> seedRanges = new ArrayList<>();
@@ -36,11 +36,11 @@ public class Part2
 			for (double seed = seedRange.min ; seed < seedRange.max ; seed++)
 			{
 				// Seed to soil
-				double soil = - 1;
+				double soil = -1;
 				for (int counter = input.indexOf("seed-to-soil map:") + 1 ; counter < input.size() ; counter++)
 				{
 					String line = input.get(counter);
-					if (line.isEmpty()) { break; }
+					if (line.isEmpty()) break;
 					String[] numbers = line.split(" ");
 					double mapNum = Double.parseDouble(numbers[1]);
 					double range = Double.parseDouble(numbers[2]);
@@ -51,14 +51,14 @@ public class Part2
 						soil = startNum + dif;
 					}
 				}
-				if (soil == - 1) { soil = seed; }
+				if (soil == -1) soil = seed;
 
 				// Soil to fertilizer
-				double fertilizer = - 1;
+				double fertilizer = -1;
 				for (int counter = input.indexOf("soil-to-fertilizer map:") + 1 ; counter < input.size() ; counter++)
 				{
 					String line = input.get(counter);
-					if (line.isEmpty()) { break; }
+					if (line.isEmpty()) break;
 					String[] numbers = line.split(" ");
 					double mapNum = Double.parseDouble(numbers[1]);
 					double range = Double.parseDouble(numbers[2]);
@@ -69,14 +69,14 @@ public class Part2
 						fertilizer = startNum + dif;
 					}
 				}
-				if (fertilizer == - 1) { fertilizer = soil; }
+				if (fertilizer == -1) fertilizer = soil;
 
 				// Fertilizer to water
-				double water = - 1;
+				double water = -1;
 				for (int counter = input.indexOf("fertilizer-to-water map:") + 1 ; counter < input.size() ; counter++)
 				{
 					String line = input.get(counter);
-					if (line.isEmpty()) { break; }
+					if (line.isEmpty()) break;
 					String[] numbers = line.split(" ");
 					double mapNum = Double.parseDouble(numbers[1]);
 					double range = Double.parseDouble(numbers[2]);
@@ -87,14 +87,14 @@ public class Part2
 						water = startNum + dif;
 					}
 				}
-				if (water == - 1) { water = fertilizer; }
+				if (water == -1) water = fertilizer;
 
 				// Water to light
-				double light = - 1;
+				double light = -1;
 				for (int counter = input.indexOf("water-to-light map:") + 1 ; counter < input.size() ; counter++)
 				{
 					String line = input.get(counter);
-					if (line.isEmpty()) { break; }
+					if (line.isEmpty()) break;
 					String[] numbers = line.split(" ");
 					double mapNum = Double.parseDouble(numbers[1]);
 					double range = Double.parseDouble(numbers[2]);
@@ -105,14 +105,14 @@ public class Part2
 						light = startNum + dif;
 					}
 				}
-				if (light == - 1) { light = water; }
+				if (light == -1) light = water;
 
 				// Light to temperature
-				double temperature = - 1;
+				double temperature = -1;
 				for (int counter = input.indexOf("light-to-temperature map:") + 1 ; counter < input.size() ; counter++)
 				{
 					String line = input.get(counter);
-					if (line.isEmpty()) { break; }
+					if (line.isEmpty()) break;
 					String[] numbers = line.split(" ");
 					double mapNum = Double.parseDouble(numbers[1]);
 					double range = Double.parseDouble(numbers[2]);
@@ -123,14 +123,14 @@ public class Part2
 						temperature = startNum + dif;
 					}
 				}
-				if (temperature == - 1) { temperature = light; }
+				if (temperature == -1) temperature = light;
 
 				// Temperature to humidity
-				double humidity = - 1;
+				double humidity = -1;
 				for (int counter = input.indexOf("temperature-to-humidity map:") + 1 ; counter < input.size() ; counter++)
 				{
 					String line = input.get(counter);
-					if (line.isEmpty()) { break; }
+					if (line.isEmpty()) break;
 					String[] numbers = line.split(" ");
 					double mapNum = Double.parseDouble(numbers[1]);
 					double range = Double.parseDouble(numbers[2]);
@@ -141,14 +141,14 @@ public class Part2
 						humidity = startNum + dif;
 					}
 				}
-				if (humidity == - 1) { humidity = temperature; }
+				if (humidity == -1) humidity = temperature;
 
 				// Humidity to location
-				double location = - 1;
+				double location = -1;
 				for (int counter = input.indexOf("humidity-to-location map:") + 1 ; counter < input.size() ; counter++)
 				{
 					String line = input.get(counter);
-					if (line.isEmpty()) { break; }
+					if (line.isEmpty()) break;
 					String[] numbers = line.split(" ");
 					double mapNum = Double.parseDouble(numbers[1]);
 					double range = Double.parseDouble(numbers[2]);
@@ -159,7 +159,7 @@ public class Part2
 						location = startNum + dif;
 					}
 				}
-				if (location == - 1) { location = humidity; }
+				if (location == -1) location = humidity;
 
 				lowestLocation = Math.min(lowestLocation, location);
 			}
@@ -173,6 +173,7 @@ public class Part2
 	{
 		public double min;
 		public double max;
+
 		public Range(double min, double max)
 		{
 			this.min = min;

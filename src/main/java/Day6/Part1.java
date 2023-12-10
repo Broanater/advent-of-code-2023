@@ -1,4 +1,4 @@
-package DaySix;
+package Day6;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,7 +15,7 @@ public class Part1
 	private static int Races() throws IOException
 	{
 		int answer = 1;
-		List<String> input = Files.readAllLines(Paths.get("src/data/daySix/input.txt"));
+		List<String> input = Files.readAllLines(Paths.get("src/data/day6/input.txt"));
 
 		String[] times = input.get(0).split("\\s+");
 		String[] distances = input.get(1).split("\\s+");
@@ -24,7 +24,7 @@ public class Part1
 		{
 			String timeStr = times[counter];
 			String distanceStr = distances[counter];
-			if (timeStr.contains(":")) { continue; }
+			if (timeStr.contains(":")) continue;
 			int time = Integer.parseInt(timeStr);
 			int distance = Integer.parseInt(distanceStr);
 			int wins = 0;
@@ -32,10 +32,10 @@ public class Part1
 			{
 				int runTime = time - millisecs;
 				int travelDistance = millisecs * runTime;
-				if (travelDistance > distance) { wins++; }
+				if (travelDistance > distance) wins++;
 			}
 
-			answer*=wins;
+			answer *= wins;
 		}
 
 		return answer;

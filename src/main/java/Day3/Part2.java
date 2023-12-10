@@ -1,4 +1,4 @@
-package DayThree;
+package Day3;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,14 +8,14 @@ import java.util.List;
 
 public class Part2
 {
-	public static void main (String[] args) throws IOException
+	public static void main(String[] args) throws IOException
 	{
 		System.out.println(Sum());
 	}
 
-	public static int Sum () throws IOException
+	public static int Sum() throws IOException
 	{
-		List<String> fileLines = Files.readAllLines(Paths.get("src/data/dayThree/input.txt"));
+		List<String> fileLines = Files.readAllLines(Paths.get("src/data/day3/input.txt"));
 
 		int rows = fileLines.size();
 		int columns = fileLines.get(0).length();
@@ -37,7 +37,6 @@ public class Part2
 			{
 				if (Character.isDigit(fileLines.get(row).charAt(column)))
 				{
-
 					int leftIndex = column;
 					int number = 0;
 					while (column < rows && Character.isDigit(fileLines.get(row).charAt(column)))
@@ -52,9 +51,7 @@ public class Part2
 						for (int checkRow = row - 1 ; checkRow < row + 2 ; checkRow++)
 						{
 							if (inIndexRange(checkRow, checkColumn, rows, columns) && isSymbol(fileLines.get(checkRow).charAt(checkColumn)))
-							{
 								numberForSymbols.get(checkRow).get(checkColumn).add(number);
-							}
 						}
 					}
 				}
@@ -76,12 +73,12 @@ public class Part2
 		return answer;
 	}
 
-	private static boolean isSymbol (Character checkChar)
+	private static boolean isSymbol(Character checkChar)
 	{
-		return ! (Character.isDigit(checkChar) || checkChar == '.');
+		return !(Character.isDigit(checkChar) || checkChar == '.');
 	}
 
-	private static boolean inIndexRange (int row, int column, int rows, int columns)
+	private static boolean inIndexRange(int row, int column, int rows, int columns)
 	{
 		return (row >= 0 && row < rows) && (column >= 0 && column < columns);
 	}

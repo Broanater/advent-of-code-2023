@@ -1,4 +1,4 @@
-package DayTwo;
+package Day2;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,12 +8,12 @@ import java.util.List;
 
 public class Part1
 {
-	public static void main (String[] args) throws IOException
+	public static void main(String[] args) throws IOException
 	{
 		System.out.println(Sum());
 	}
 
-	public static int Sum () throws IOException
+	public static int Sum() throws IOException
 	{
 		int total = 0;
 		for (int num : GetNumbers())
@@ -23,10 +23,10 @@ public class Part1
 		return total;
 	}
 
-	private static ArrayList<Integer> GetNumbers () throws IOException
+	private static ArrayList<Integer> GetNumbers() throws IOException
 	{
 		ArrayList<Integer> ids = new ArrayList<>();
-		List<String> fileLines = Files.readAllLines(Paths.get("src/data/dayTwo/input.txt"));
+		List<String> fileLines = Files.readAllLines(Paths.get("src/data/day2/input.txt"));
 		for (String line : fileLines)
 		{
 			int gameId = Integer.parseInt(line.substring(4, line.indexOf(":")).trim());
@@ -47,24 +47,24 @@ public class Part1
 					switch (colour)
 					{
 						case "red":
-							if (cubeCount > 12) { redAllowed = false; }
+							if (cubeCount > 12) redAllowed = false;
 							break;
 						case "green":
-							if (cubeCount > 13) { greenAllowed = false; }
+							if (cubeCount > 13) greenAllowed = false;
 							break;
 						case "blue":
-							if (cubeCount > 14) { blueAllowed = false; }
+							if (cubeCount > 14) blueAllowed = false;
 							break;
 					}
 				}
-				if (redAllowed && greenAllowed && blueAllowed) { gameAllowed = true; }
+				if (redAllowed && greenAllowed && blueAllowed) gameAllowed = true;
 				else
 				{
 					gameAllowed = false;
 					break;
 				}
 			}
-			if (gameAllowed) { ids.add(gameId); }
+			if (gameAllowed) ids.add(gameId);
 		}
 
 		return ids;

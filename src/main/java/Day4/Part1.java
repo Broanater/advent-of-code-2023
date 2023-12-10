@@ -1,4 +1,4 @@
-package DayFour;
+package Day4;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Part1
 {
-	public static void main (String[] args) throws IOException
+	public static void main(String[] args) throws IOException
 	{
 		System.out.println(Sum());
 	}
@@ -15,7 +15,7 @@ public class Part1
 	public static int Sum() throws IOException
 	{
 		int answer = 0;
-		List<String> input = Files.readAllLines(Paths.get("src/data/dayFour/input.txt"));
+		List<String> input = Files.readAllLines(Paths.get("src/data/day4/input.txt"));
 
 		for (String line : input)
 		{
@@ -27,15 +27,19 @@ public class Part1
 			int points = 0;
 			for (String numStr : yourNumbers)
 			{
-				if (numStr.isEmpty()) { continue; }
+				if (numStr.isEmpty()) continue;
 				int num = Integer.parseInt(numStr.trim());
 				for (String winningNumStr : winningNumbers)
 				{
-					if (winningNumStr.isEmpty()) { continue; }
+					if (winningNumStr.isEmpty()) continue;
 					int winningNum = Integer.parseInt(winningNumStr.trim());
 					if (num == winningNum)
 					{
-						if (points == 0) { points++; continue; }
+						if (points == 0)
+						{
+							points++;
+							continue;
+						}
 						points *= 2;
 					}
 				}

@@ -1,4 +1,4 @@
-package DayTwo;
+package Day2;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,12 +8,12 @@ import java.util.List;
 
 public class Part2
 {
-	public static void main (String[] args) throws IOException
+	public static void main(String[] args) throws IOException
 	{
 		System.out.println(Sum());
 	}
 
-	public static int Sum () throws IOException
+	public static int Sum() throws IOException
 	{
 		int total = 0;
 		for (int num : GetNumbers())
@@ -26,7 +26,7 @@ public class Part2
 	private static ArrayList<Integer> GetNumbers() throws IOException
 	{
 		ArrayList<Integer> powerSums = new ArrayList<>();
-		List<String> fileLines = Files.readAllLines(Paths.get("src/data/dayTwo/input.txt"));
+		List<String> fileLines = Files.readAllLines(Paths.get("src/data/day2/input.txt"));
 		for (String line : fileLines)
 		{
 			String gameRecords = line.substring(line.indexOf(":") + 1);
